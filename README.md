@@ -158,6 +158,17 @@ screenshots and traces under `test-results/`.
 To use an existing Firefox executable, set `PLAYWRIGHT_FIREFOX_EXECUTABLE_PATH`
 to its absolute path before running the tests.
 
+## GitHub Actions
+
+The [CI workflow](.github/workflows/ci.yml) runs on pushes and pull requests and
+can also be started manually from the Actions tab. It uses Node.js 22, installs
+dependencies with `npm ci`, runs lint, builds the project, installs Firefox and
+its system dependencies, and runs the state and browser tests. Browser tests
+start their own development server in CI.
+
+Failed runs upload available screenshots and traces as a `test-results` artifact,
+retained for seven days.
+
 ## Suggested walkthrough
 
 1. On **Hjem**, split the default 195 kr fare between three people, then choose
