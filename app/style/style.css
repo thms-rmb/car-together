@@ -1,0 +1,51 @@
+/*
+ * CarTogether color tokens.
+ * Colors approximate the logo and app mockups on pages 1–3 of
+ * "CarTogether APP (Thomas).pdf"; the PDF does not specify hex values.
+ */
+:root {
+  /* Base palette */
+  --color-white: #ffffff;
+  --color-green-50: #f1f9ee;
+  --color-green-100: #e2f4dc;
+  --color-green-200: #c8eac0;
+  --color-green-500: #36ad59;
+  --color-green-600: #168548;
+  --color-green-700: #106b3a;
+  --color-teal-600: #008b73;
+  --color-teal-700: #006e5c;
+  --color-navy-900: #0b2835;
+  --color-gray-50: #faf9f6;
+  --color-gray-200: #e7ebe7;
+  --color-gray-500: #6b7985;
+  --color-gold-400: #ffbc19;
+
+  /* Surfaces and borders */
+  --color-background: var(--color-gray-50);
+  --color-surface: var(--color-white);
+  --color-surface-subtle: var(--color-green-50);
+  --color-surface-selected: var(--color-green-100);
+  --color-border: var(--color-gray-200);
+
+  /* Text and icons */
+  --color-text: var(--color-navy-900);
+  --color-text-muted: var(--color-gray-500);
+  --color-text-on-primary: var(--color-white);
+  --color-icon: var(--color-navy-900);
+
+  /* Actions, selected navigation, and ride prices */
+  --color-primary: var(--color-green-600);
+  --color-primary-hover: var(--color-green-700);
+  --color-accent: var(--color-teal-600);
+  --color-accent-hover: var(--color-teal-700);
+  --color-focus-ring: var(--color-teal-700);
+  --color-price: var(--color-green-600);
+  --color-rating-star: var(--color-gold-400);
+
+  /* Green-to-teal Carpool button shown on the home screen */
+  --gradient-primary: linear-gradient(
+    110deg,
+    var(--color-green-500),
+    var(--color-teal-600)
+  );
+}
