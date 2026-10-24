@@ -169,6 +169,28 @@ start their own development server in CI.
 Failed runs upload available screenshots and traces as a `test-results` artifact,
 retained for seven days.
 
+### GitHub Pages
+
+Successful pushes to `main`, or manual CI runs on `main`, publish the tested
+`dist/` build to GitHub Pages. Pull requests and other branches run checks without
+publishing. Deployment runs in the `github-pages` environment, whose URL links to
+the published site. Runs on `main` are serialized so an active deployment can finish.
+
+One-time repository setup:
+
+1. Open **Settings → Pages → Build and deployment** and select **GitHub Actions**
+   as the source.
+2. Push to `main` or manually run **CI** from the Actions tab.
+
+GitHub creates the `github-pages` environment when the deployment job first runs.
+Its deployment rules can be managed in **Settings → Environments**. The workflow
+only allows publishing from `main` and uses GitHub's built-in token; no custom
+deployment secret is needed.
+
+The default site address for this repository is
+[thms-rmb.github.io/car-together/](https://thms-rmb.github.io/car-together/).
+Assets use relative paths, so the mockup also works under this repository subpath.
+
 ## Suggested walkthrough
 
 1. On **Hjem**, split the default 195 kr fare between three people, then choose

@@ -10,7 +10,7 @@ permissions:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
   checks:
@@ -45,6 +45,12 @@ jobs:
       - name: Run unit and browser tests
         run: npm test
 
+      - name: Upload GitHub Pages build
+        if: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') }}
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist/
+
       - name: Upload test failure artifacts
         if: ${{ failure() }}
         uses: actions/upload-artifact@v7
@@ -53,3 +59,24 @@ jobs:
           path: test-results/
           if-no-files-found: ignore
           retention-days: 7
+
+  deploy:
+    name: Publish to GitHub Pages
+    if: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') }}
+    needs: checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v6
+
+      - name: Deploy static build
+        id: deployment
+        uses: actions/deploy-pages@v5
