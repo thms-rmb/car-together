@@ -4,7 +4,7 @@ import { defineConfig } from "eslint/config";
 import globals from "globals";
 
 export default defineConfig([
-  { ignores: ["node_modules/**", "dist/**"] },
+  { ignores: ["node_modules/**", "dist/**", "test-results/**", "playwright-report/**"] },
   {
     files: ["**/*.{js,mjs,cjs}"],
     extends: [js.configs.recommended],
@@ -16,7 +16,7 @@ export default defineConfig([
     extends: ["css/recommended"],
   },
   {
-    files: ["app/**/*.js"],
+    files: ["app/**/*.js", "tests/**/*.spec.js"],
     languageOptions: {
       globals: globals.browser,
     },

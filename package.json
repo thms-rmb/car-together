@@ -7,11 +7,15 @@
     "start": "webpack serve --mode development",
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0",
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "node --test tests/demo-state.test.js",
+    "test:e2e": "playwright test"
   },
   "devDependencies": {
     "@eslint/css": "^2.0.1",
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.64.1",
     "eslint": "^10.13.0",
     "globals": "^17.13.0",
     "webpack": "~5.112.2",
