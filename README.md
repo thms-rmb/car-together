@@ -73,9 +73,16 @@ Both cancellation and withdrawal end with a confirmation page.
 
 ### Om oss: the concept and team
 
-The About view explains the idea of easier, more affordable festival travel
-through price comparison and shared rides. It presents Ella (CEO), Amathea (CFO),
-Emma (CPO), Sunniva (CMO), and Lucia (COO) with initials as avatar placeholders.
+The About view opens with the five proofread "Konseptet" points from the customer
+requirements, covering price comparison, shared costs, offering rides, mutual
+ratings and a focus on festivals. A Norwegian adaptation of the
+"Concept and solution" slide presents the planned features, benefits for cost,
+time and climate, and the concept's approach to transparency, flexibility,
+sustainability and connecting travellers with transport. Live prices, profiles
+and smart notifications are described as planned features.
+
+It presents Ella (CEO), Amathea (CFO),
+Emma (CPO), Sunniva (CMO), and Lucia (COO) with individual portrait photos.
 
 It also describes the concept's ambitions around innovation, sustainable cities,
 and climate action, inspired by UN Sustainable Development Goals 9, 11, and 13.
@@ -135,6 +142,7 @@ The app uses React and webpack's experimental native HTML and CSS support.
 | `app/mock-data.js` | Locations, providers, fares, demo user, rides, and team fixtures |
 | `app/components/` | Route controls, cards, forms, review and confirmation screens, and view content |
 | `app/style/style.css` | Color tokens, responsive layout, and keyboard focus styles |
+| `src/image/` | Team portraits imported through webpack asset modules |
 
 ## Testing
 

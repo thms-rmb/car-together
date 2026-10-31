@@ -6,6 +6,17 @@ export default {
     html: true,
     css: true,
   },
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|webp)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "image/[name].[contenthash][ext]",
+        },
+      },
+    ],
+  },
   output: {
     path: fileURLToPath(new URL("./dist/", import.meta.url)),
     clean: true,
