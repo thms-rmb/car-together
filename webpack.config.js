@@ -9,7 +9,7 @@ export default {
   module: {
     rules: [
       {
-        test: /\.(png|jpe?g|webp)$/i,
+        test: /\.(png|jpe?g|webp|svg)$/i,
         type: "asset/resource",
         generator: {
           filename: "image/[name].[contenthash][ext]",

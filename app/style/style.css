@@ -73,8 +73,7 @@ h3 { font-size: 16px; font-weight: 650; }
 .header-inner { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
 .wordmark { display: flex; align-items: center; text-decoration: none; font-size: 24px; font-weight: 750; letter-spacing: -1.2px; }
 .wordmark > span:not(.brand-icon) { color: var(--color-primary); }
-.brand-icon { display: grid; place-items: center; height: 38px; width: 38px; border-radius: 12px; color: white; background: var(--color-primary); margin-right: 10px; transform: rotate(-5deg); }
-.brand-icon svg { transform: rotate(5deg); }
+.brand-icon { display: block; height: 38px; width: auto; flex-shrink: 0; margin-right: 10px; }
 .wordmark .brand-period { color: var(--color-text); }
 nav { display: flex; gap: 7px; }
 .nav-button { display: flex; align-items: center; gap: 8px; padding: 10px 18px; border: 0; background: transparent; border-radius: 9px; font-size: 14px; font-weight: 600; color: #65746c; white-space: nowrap; }
@@ -258,7 +257,7 @@ nav { display: flex; gap: 7px; }
   .header-inner, .main-container, .footer-inner { width: calc(100% - 36px); }
   .header-inner { min-height: 112px; flex-direction: column; justify-content: center; gap: 10px; padding: 15px 0 10px; }
   .wordmark { font-size: 22px; }
-  .brand-icon { height: 32px; width: 32px; border-radius: 10px; }
+  .brand-icon { height: 32px; }
   nav { width: 100%; justify-content: center; gap: 8px; }
   .nav-button { padding: 8px 17px; font-size: 12px; min-height: 38px; }
   .demo-bar { font-size: 10px; min-height: 32px; padding: 7px 12px; }

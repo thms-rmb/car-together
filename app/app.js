@@ -2,6 +2,7 @@ import { createElement as h, useEffect, useReducer, useRef, useState } from 'rea
 import { createRoot } from 'react-dom/client';
 import { demoOffer, demoUser, formatPrice, pricesForRoute } from './mock-data.js';
 import Icon from './components/icon.js';
+import logo from '../src/image/Cartogether.svg';
 import RouteSelector from './components/route-selector.js';
 import PriceComparison from './components/price-comparison.js';
 import RideCard from './components/ride-card.js';
@@ -108,7 +109,7 @@ function App() {
   return h('div', { className: 'app-shell' },
     h('a', { className: 'skip-link', href: '#main' }, 'Hopp til innhold'),
     h('header', { className: 'site-header' }, h('div', { className: 'header-inner' },
-      h('a', { className: 'wordmark', href: '#main', onClick: () => navigate('home'), 'aria-label': 'CarTogether – Hjem' }, h('span', { className: 'brand-icon' }, h(Icon, { name: 'car', size: 25 })), 'Car', h('span', null, 'Together'), h('span', { className: 'brand-period' }, '.')),
+      h('a', { className: 'wordmark', href: '#main', onClick: () => navigate('home'), 'aria-label': 'CarTogether – Hjem' }, h('img', { className: 'brand-icon', src: logo, alt: '', width: 98, height: 65 }), 'Car', h('span', null, 'Together'), h('span', { className: 'brand-period' }, '.')),
       h('nav', { 'aria-label': 'Hovedmeny' }, [['home', 'Hjem', 'car'], ['carpool', 'Carpool', 'people'], ['trips', `Mine turer${tripCount ? ` (${tripCount})` : ''}`, 'clock'], ['about', 'Om oss', 'leaf']].map(([id, label, icon]) =>
         h('button', { key: id, className: `nav-button${view === id ? ' active' : ''}`, 'aria-current': view === id ? 'page' : undefined, onClick: () => navigate(id) }, h(Icon, { name: icon, size: 17 }), label))),
       h('span', { className: 'header-note' }, h('span', { className: 'live-dot' }), 'Laget for å dele'))),
